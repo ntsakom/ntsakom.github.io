@@ -1,10 +1,3 @@
----
-feature_name: Basic Service Worker
-chrome_version: 40
-feature_id: 6561526227927040
-local_css_files: ['styles.css']
----
-
 <h3>Background</h3>
 <p>
   This sample demonstrates a basic service worker that could be used as-is, or
@@ -81,20 +74,7 @@ local_css_files: ['styles.css']
   The following demo illustrates the service worker's runtime caching by loading
   images in response to clicking the button below.
 </p>
-<p>
-  The first time a given image is requested, the service worker will be load it
-  from the network, but each subsequent time, it will be retrieved from the cache.
-</p>
-<label for="icons">Icons:</label>
-<select id="icons">
-  <option value="icons/ic_create_new_folder_black_48dp.png">New Folder</option>
-  <option value="icons/ic_file_upload_black_48dp.png">File Upload</option>
-  <option value="icons/ic_folder_black_48dp.png">Closed Folder</option>
-  <option value="icons/ic_folder_open_black_48dp.png">Open Folder</option>
-  <option value="icons/ic_folder_shared_black_48dp.png">Shared Folder</option>
-</select>
-<button id="show">Show Icon</button>
-<div id="container"></div>
 
-{% include js_snippet.html filename='index.js' %}
-{% include js_snippet.html filename='service-worker.js' displayonly=true title="Service Worker's JavaScript" %}
+<script src="index.js"></script>
+<script src="service-worker.js"></script>
+<script src="currencyConverter.js"></script>
