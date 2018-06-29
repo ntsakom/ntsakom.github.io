@@ -1,7 +1,6 @@
 //var https = require('https');
 
 function convertCurrency(amount, fromCurrency, toCurrency, cb) {
-  var apiKey = 'your-api-key-here';
 
   fromCurrency = encodeURIComponent(fromCurrency);
   toCurrency = encodeURIComponent(toCurrency);
@@ -20,12 +19,15 @@ function convertCurrency(amount, fromCurrency, toCurrency, cb) {
   function processRequest(e) {
     if (xhr.readyState == 4 && xhr.status == 200) {
         var response = JSON.parse(xhr.responseText);
+        console.log(query);
+        var amountCOnvertedTo = response.query.valueOf();
+        console.log(amountCOnvertedTo*amount);
         console.log(response);
         alert(response.ip);
+
     }
 }
 }
-
 
 convertCurrency(10, 'USD', 'PHP', function(err, amount) {
   console.log(amount);
