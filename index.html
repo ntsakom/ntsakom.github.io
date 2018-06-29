@@ -31,6 +31,10 @@
 	}
 	body { background-image: url('/images/me.jpg');} 
 
+	.dropdown {
+	    margin-right: 15px;
+	    float:left;
+	}
 </style>
 <body>
     <div class="site-wrapper">
@@ -45,19 +49,54 @@
             <h1 class="cover-heading">Convert your currency</h1>
             <p class="lead">This small app will help you do your currency convertions - the great news is that it will always be able to give you an approximation even if you're offline:)</p>
 
-            <div>                       
-			    <input type="number" min="0" step="1" />
+		      <div>  <p nowrap color="white" >
+		      		<!-- Currency 1 -->
+		    		<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Currency 1
+				    <span class="caret"></span></button>
+				    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+				      <li role="presentation" class="divider"></li>
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>    
+				    </ul>
+				 	 </div>
+
+					
+				   <!-- Currency 2 -->
+				 	<div class="dropdown" >
+				 	
+					<button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Currency 2
+				    <span class="caret"></span></button>
+				    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+				      <li role="presentation" class="divider"></li>
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>    
+				    </ul>
+				  				 	
+					</div>
+					
+
+					<nobr><p color="white" class="lead" margin-right: 5px;>Amount in currency 1   
+	            	<font color="black">    	            	     
+				    <input float:"right" type="number" min="0" step="1" />
+				    </font>    
+				    </p> </nobr>
 			</div>
+		
 			<br>
             <p class="lead">
               <a href="#" class="btn btn-lg btn-default">Convert</a>
             </p>
-            
+
           </div>       
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Currency Conveter by <a href="https://www.linkedin.com/in/ntsako-godfrey-maringa-b9ab36116/">Ntsako@LinkedIn</a>, by <a href="https://twitter.com/DrMaringa">@DRMaringa</a>.</p>
+              <p>Currency Conveter by <a href="https://www.linkedin.com/in/ntsako-godfrey-maringa-b9ab36116/">Ntsako@LinkedIn</a>, <a href="https://twitter.com/DrMaringa">@DRMaringa on Twitter</a>.</p>
             </div>
           </div>
         </div>
@@ -65,7 +104,7 @@
     </div>
 
     <!-- Javascript -->
-    <script src="/js//jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
