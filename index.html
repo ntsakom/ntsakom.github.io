@@ -1,80 +1,76 @@
-<h3>Background</h3>
-<p>
-  This sample demonstrates a basic service worker that could be used as-is, or
-  as a starting point for further customization.
-</p>
 
-<h4>What It Does</h4>
-<ul>
-  <li>
-    Precaches the HTML, JavaScript, and CSS files needed to display this page offline.
-    (Try it out by reloading the page without a network connection!)
-  </li>
-  <li>Cleans up the previously precached entries when the cache name is updated.</li>
-  <li>Intercepts network requests, returning a cached response when available.</li>
-  <li>
-    If there's no cached response, fetches the response from the network and
-    adds it to the cache for future use.
-  </li>
-</ul>
-<p>
-  You can confirm the service worker's behavior using the
-  <a href="https://developers.google.com/web/tools/chrome-devtools/debug/progressive-web-apps/">Application panel</a>
-  of Chrome's DevTools.
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h4>What It Doesn't Do</h4>
-<ul>
-  <li>
-    Automatically version any of the precached resources.<br>
-    <em>
-      You must manually update the <code>CACHES.PRECACHE</code> name to pick up
-      new versions after updating anything!
-    </em>
-  </li>
-  <li>
-    Cache-bust the precaching requests.<br>
-    <em>
-      The <code>cache.addAll()</code> call may be fulfilled with responses from
-      the HTTP cache, depending on the HTTP caching headers you use. If you
-      are using
-      <a href="https://jakearchibald.com/2016/caching-best-practices/">HTTP caching</a>
-      and unversioned resources, it can be safer to
-      <a href="https://github.com/GoogleChrome/samples/blob/5c20f8d74d890fad3d867747d2c3fc853727700c/service-worker/prefetch/service-worker.js#L56">cache-bust</a>
-      your precaching requests.
-    </em>
-  </li>
-  <li>
-    Refresh the entries in the runtime cache.<br>
-    <em>
-      Once an entry is added to the runtime cache, it's used indefinitely,
-      without consulting the network to check for updates. If your runtime cache
-      is used for resources that might be updated, a different strategy, like
-      <a href="https://jakearchibald.com/2014/offline-cookbook/#stale-while-revalidate">stale-while-revalidate</a>
-      could be more appropriate.
-    </em>
-  </li>
-  <li>
-    Clean out the runtime cache.<br>
-    <em>
-      The runtime cache will grow as new resource URLs are requested. In this
-      example, there are only 5 different images that might be loaded, so the
-      cache size isn't a concern. If your web app might request an arbitrary
-      number of unique resource URLs, then using a library like
-      <a href="https://github.com/GoogleChrome/sw-toolbox"><code>sw-toolbox</code></a>
-      which provides
-      <a href="https://github.com/GoogleChrome/sw-toolbox/tree/master/recipes/cache-expiration-options">cache-expiration</a>
-      is recommended.
-    </em>
-  </li>
-</ul>
+    <meta name="description" content="currency conversion app">
+    <meta name="author" content="Ntsako Maringa">
+    <link rel="icon" href="/images/me2.jpg">
 
-<h3>Live Demo</h3>
-<p>
-  The following demo illustrates the service worker's runtime caching by loading
-  images in response to clicking the button below.
-</p>
+    <title>Convert between the worlds' currencies</title>
 
-<script src="index.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-<script src="currencyConverter.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
+  </head>
+<style>
+	.label-default {
+	  background-color: #ffffff;
+	}
+	body { background-image: url('/images/me.jpg');} 
+
+</style>
+<body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Currency Converter</h3>         
+            </div>
+          </div>
+          <div class="inner cover">
+            <h1 class="cover-heading">Convert your currency</h1>
+            <p class="lead">This small app will help you do your currency convertions - the great news is that it will always be able to give you an approximation even if you're offline:)</p>
+
+            <div>                       
+			    <input type="number" min="0" step="1" />
+			</div>
+			<br>
+            <p class="lead">
+              <a href="#" class="btn btn-lg btn-default">Convert</a>
+            </p>
+            
+          </div>       
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Currency Conveter by <a href="https://www.linkedin.com/in/ntsako-godfrey-maringa-b9ab36116/">Ntsako@LinkedIn</a>, by <a href="https://twitter.com/DrMaringa">@DRMaringa</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="/js//jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="index.js"></script>
+	<script src="currencyConverter.js"></script>
+
+  </body>
